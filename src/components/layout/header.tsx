@@ -141,6 +141,15 @@ export function Header() {
           : "border-border-hairline bg-surface/90 shadow-[0_18px_60px_-48px_rgba(9,11,13,0.55)] backdrop-blur-xl"
       )}
     >
+      {/* Gradasi putih 50% di mobile yang menyatu halus ke area Hero */}
+      <div
+        aria-hidden
+        className={cn(
+          "pointer-events-none absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-white/50 via-white/20 via-60% to-transparent transition-opacity duration-300 lg:hidden",
+          floating ? "opacity-100" : "opacity-0"
+        )}
+      />
+
       <div className="container-editorial flex h-20 items-center justify-between gap-space-md lg:gap-gutter-desktop">
         {/*
           Both wordmarks are rendered and cross-faded rather than swapping the
