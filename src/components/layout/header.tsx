@@ -170,14 +170,14 @@ export function Header() {
 
         <HeaderNav inverse={floating} />
 
-        <div className="flex items-center gap-space-xs">
+        <div className="flex items-center gap-2 sm:gap-space-xs">
           <WhatsAppCta
             source="header"
             size="sm"
             className={cn(
-              "hidden min-h-10 rounded-md px-space-lg active:translate-y-px sm:inline-flex",
+              "inline-flex h-10 pointer-coarse:h-11 rounded-md px-3 text-xs font-semibold sm:px-space-lg sm:text-label-md active:translate-y-px",
               floating
-                ? "shadow-[0_10px_30px_-18px_rgba(254,179,2,0.75)]"
+                ? "shadow-[0_10px_30px_-18px_rgba(238,252,59,0.75)]"
                 : "shadow-hairline"
             )}
           >
