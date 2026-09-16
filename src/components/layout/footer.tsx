@@ -83,9 +83,11 @@ export function Footer() {
           </nav>
 
           <div className="space-y-space-lg lg:col-span-2">
-            <div className="space-y-space-sm">
-              <h2 className="text-label-eyebrow uppercase text-muted-gray">Social</h2>
-              <SocialLinks />
+            <div className="space-y-space-xs">
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+                <h2 className="text-label-eyebrow uppercase text-muted-gray">Social</h2>
+                <SocialLinks />
+              </div>
             </div>
 
             <div className="space-y-space-2xs">

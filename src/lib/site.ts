@@ -72,9 +72,15 @@ export const site = {
   email: optional(process.env.NEXT_PUBLIC_CONTACT_EMAIL),
 
   social: {
-    instagram: optional(process.env.NEXT_PUBLIC_INSTAGRAM_URL),
-    facebook: optional(process.env.NEXT_PUBLIC_FACEBOOK_URL),
-    tiktok: optional(process.env.NEXT_PUBLIC_TIKTOK_URL),
+    instagram:
+      optional(process.env.NEXT_PUBLIC_INSTAGRAM_URL) ??
+      "https://www.instagram.com/home_interior_bandung/",
+    facebook:
+      optional(process.env.NEXT_PUBLIC_FACEBOOK_URL) ??
+      "https://www.facebook.com/profile.php?id=61564501936191&locale=id_ID",
+    tiktok:
+      optional(process.env.NEXT_PUBLIC_TIKTOK_URL) ??
+      "https://www.tiktok.com/@homeinteriorbandung?lang=id-ID",
     threads: optional(process.env.NEXT_PUBLIC_THREADS_URL),
   },
 

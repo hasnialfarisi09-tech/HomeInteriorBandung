@@ -17,6 +17,8 @@ const channels = [
     Icon: InstagramIcon,
     showcaseClass:
       "hover:border-[#E4405F]/35 hover:bg-[radial-gradient(circle_at_30%_110%,#FEDA75_0%,#FA7E1E_28%,#D62976_54%,#962FBF_75%,#4F5BD5_100%)] hover:text-pure-white hover:shadow-[0_22px_65px_-32px_rgba(214,41,118,0.75)]",
+    defaultClass:
+      "hover:border-[#E4405F]/40 hover:bg-[#E4405F] hover:text-pure-white hover:shadow-sm",
   },
   {
     key: "facebook",
@@ -24,6 +26,8 @@ const channels = [
     Icon: FacebookIcon,
     showcaseClass:
       "hover:border-[#1877F2]/30 hover:bg-[#1877F2] hover:text-pure-white hover:shadow-[0_22px_65px_-32px_rgba(24,119,242,0.75)]",
+    defaultClass:
+      "hover:border-[#1877F2]/40 hover:bg-[#1877F2] hover:text-pure-white hover:shadow-sm",
   },
   {
     key: "threads",
@@ -31,6 +35,8 @@ const channels = [
     Icon: ThreadsIcon,
     showcaseClass:
       "hover:border-deep-black/30 hover:bg-deep-black hover:text-pure-white hover:shadow-[0_22px_65px_-32px_rgba(9,11,13,0.75)]",
+    defaultClass:
+      "hover:border-deep-black/40 hover:bg-deep-black hover:text-pure-white hover:shadow-sm",
   },
   {
     key: "tiktok",
@@ -38,6 +44,8 @@ const channels = [
     Icon: TikTokIcon,
     showcaseClass:
       "hover:border-deep-black/30 hover:bg-deep-black hover:text-pure-white hover:shadow-[0_22px_65px_-34px_rgba(9,11,13,0.8)]",
+    defaultClass:
+      "hover:border-deep-black/40 hover:bg-deep-black hover:text-pure-white hover:shadow-sm",
   },
 ] as const;
 
@@ -67,29 +75,33 @@ export function SocialLinks({
       className={cn(
         isShowcase
           ? "flex flex-wrap items-center justify-center gap-space-md"
-          : "flex items-center gap-space-sm",
+          : "flex items-center gap-2",
         className,
       )}
     >
-      {available.map(({ key, label, Icon, showcaseClass }) => (
+      {available.map(({ key, label, Icon, showcaseClass, defaultClass }) => (
         <li key={key}>
           <a
             href={site.social[key] as string}
             target="_blank"
             rel="noopener noreferrer"
+            title={label}
             aria-label={`${label} ${site.name}`}
             onClick={() => track("social_click", { channel: key })}
             className={cn(
-              "group inline-flex items-center justify-center rounded-md transition-[background-color,border-color,box-shadow,color,scale,translate] duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary active:translate-y-px",
+              "group inline-flex items-center justify-center rounded-lg border border-border-hairline bg-surface-container-lowest text-on-surface-variant shadow-hairline transition-[background-color,border-color,box-shadow,color,scale,translate] duration-200 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary active:scale-95",
               isShowcase
                 ? cn(
-                    "size-[3.25rem] border border-border-hairline bg-surface-container-lowest text-on-surface-variant shadow-hairline hover:scale-[1.05] md:size-[3.75rem] lg:size-[4.25rem]",
+                    "size-[3.25rem] hover:scale-[1.05] md:size-[3.75rem] lg:size-[4.25rem]",
                     showcaseClass,
                   )
-                : "size-9 pointer-coarse:size-11 text-on-surface-variant hover:bg-surface-container hover:text-on-surface",
+                : cn(
+                    "size-8 pointer-coarse:size-9 hover:scale-105",
+                    defaultClass,
+                  ),
             )}
           >
-            <Icon className={isShowcase ? "size-7 md:size-8 lg:size-9" : "size-[18px]"} />
+            <Icon className={isShowcase ? "size-7 md:size-8 lg:size-9" : "size-4 sm:size-[17px]"} />
           </a>
         </li>
       ))}
