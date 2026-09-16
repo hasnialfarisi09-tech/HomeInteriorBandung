@@ -17,7 +17,7 @@ import { IMAGE_LADDER } from "./src/lib/image-ladder.mjs";
  * the two can never disagree. Falls back to the production domain.
  */
 const canonicalHost = new URL(
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://niscalafurniture.com"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://homeinteriorbandung.com"
 ).host;
 
 const nextConfig = {
@@ -55,8 +55,8 @@ const nextConfig = {
   /**
    * Fold www into the bare domain.
    *
-   * The host serves the whole site on both `niscalafurniture.com` and
-   * `www.niscalafurniture.com`, each returning 200 - fifty-one pages reachable
+   * The host serves the whole site on both `homeinteriorbandung.com` and
+   * `www.homeinteriorbandung.com`, each returning 200 - fifty-one pages reachable
    * at two hostnames. The canonical tag already points at the bare domain, so
    * Google would consolidate them eventually, but it still crawls both and
    * spends the budget twice. A 301 settles it at the first request instead.

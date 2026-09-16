@@ -13,7 +13,7 @@ import { variantUrl } from "./image-ladder.mjs";
  * it here would mean encoding on demand, which is the whole thing this
  * replaces.
  */
-export default function niscalaImageLoader({
+export default function hibImageLoader({
   src,
   width,
 }: {
