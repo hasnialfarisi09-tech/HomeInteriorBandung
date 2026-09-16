@@ -4,16 +4,16 @@ import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { site } from "@/lib/site";
 
-/** Intrinsic size of the generated H.I.B. logo files. */
-const LOGO_WIDTH = 1970;
-const LOGO_HEIGHT = 1432;
+/** Intrinsic size of the generated landscape H.I.B. logo files (463x148). */
+const LOGO_WIDTH = 463;
+const LOGO_HEIGHT = 148;
 
-const RENDER_WIDTH = 165;
+const RENDER_WIDTH = 144;
 const RENDER_HEIGHT = Math.round((RENDER_WIDTH * LOGO_HEIGHT) / LOGO_WIDTH);
 
 const SIZES = {
-  header: "h-8 w-auto sm:h-9 lg:h-10 object-contain",
-  footer: "h-10 w-auto sm:h-12 lg:h-14 object-contain",
+  header: "h-7 w-auto sm:h-8 lg:h-9 object-contain",
+  footer: "h-8 w-auto sm:h-9 lg:h-10 object-contain",
 } as const;
 
 type BrandMarkProps = {
@@ -40,8 +40,8 @@ export function BrandMark({
     <Image
       src={
         tone === "dark"
-          ? "/logo/hib-logo-dark.png"
-          : "/logo/hib-logo-light.png"
+          ? "/logo/hib-landscape-dark.png"
+          : "/logo/hib-landscape-light.png"
       }
       alt={site.name}
       width={RENDER_WIDTH}
