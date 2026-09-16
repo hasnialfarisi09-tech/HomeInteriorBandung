@@ -106,19 +106,19 @@ export function Hero() {
               button carries a 1px border the filled one does not, so side by
               side they stand 46px and 44px unless something makes them agree.
             */}
-            <div className="mt-space-md grid grid-cols-2 items-stretch gap-2 sm:flex sm:flex-wrap sm:gap-space-md">
+            <div className="mt-space-md grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-stretch sm:gap-space-md">
               <WhatsAppCta
                 source="hero"
-                className="h-full px-2 py-2.5 text-center text-xs leading-snug sm:h-auto sm:px-space-xl sm:py-space-sm sm:text-label-lg"
+                className="h-auto min-h-[46px] px-2 py-2.5 text-xs text-center leading-tight justify-center sm:min-h-0 sm:px-space-xl sm:py-space-sm sm:text-label-lg"
               >
-                <span>Konsultasikan Ruangan Anda</span>
+                Konsultasikan Ruangan Anda
               </WhatsAppCta>
               <Button
                 href="/portfolio"
                 variant="outline-inverse"
-                className="h-full px-2 py-2.5 text-center text-xs leading-snug sm:h-auto sm:px-space-xl sm:py-space-sm sm:text-label-lg"
+                className="h-auto min-h-[46px] px-2 py-2.5 text-xs text-center leading-tight justify-center sm:min-h-0 sm:px-space-xl sm:py-space-sm sm:text-label-lg"
               >
-                <span>Lihat Portofolio Proyek</span>
+                Lihat Portofolio Proyek
               </Button>
             </div>
           </Reveal>

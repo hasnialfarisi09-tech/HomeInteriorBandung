@@ -3,8 +3,8 @@
 import { MessageCircle } from "lucide-react";
 import type { ReactNode } from "react";
 
-import { track } from "@/lib/analytics";
 import { cn } from "@/lib/cn";
+import { track } from "@/lib/analytics";
 import { buildWhatsAppUrl, type WhatsAppSource } from "@/lib/whatsapp";
 import { Button, type ButtonSize, type ButtonVariant } from "@/components/ui/button";
 
