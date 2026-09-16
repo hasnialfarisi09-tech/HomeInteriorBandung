@@ -4,6 +4,7 @@ import { MessageCircle } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { track } from "@/lib/analytics";
+import { cn } from "@/lib/cn";
 import { buildWhatsAppUrl, type WhatsAppSource } from "@/lib/whatsapp";
 import { Button, type ButtonSize, type ButtonVariant } from "@/components/ui/button";
 
@@ -13,6 +14,7 @@ type WhatsAppCtaProps = {
   variant?: ButtonVariant;
   size?: ButtonSize;
   className?: string;
+  iconClassName?: string;
   /** Extra line appended to the prefilled message, e.g. the project title. */
   context?: string;
   /** Where to send visitors when no WhatsApp number is configured yet. */
@@ -33,6 +35,7 @@ export function WhatsAppCta({
   variant = "primary",
   size = "md",
   className,
+  iconClassName,
   context,
   fallbackHref = "/survey",
   showIcon = true,
@@ -40,7 +43,7 @@ export function WhatsAppCta({
   const url = buildWhatsAppUrl({ source, context });
 
   const icon = showIcon ? (
-    <MessageCircle aria-hidden className="size-[18px]" />
+    <MessageCircle aria-hidden className={cn("size-3.5 sm:size-[18px] shrink-0", iconClassName)} />
   ) : null;
 
   if (!url) {

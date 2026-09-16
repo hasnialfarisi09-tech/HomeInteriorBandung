@@ -106,29 +106,19 @@ export function Hero() {
               button carries a 1px border the filled one does not, so side by
               side they stand 46px and 44px unless something makes them agree.
             */}
-            <div className="mt-space-md grid gap-space-sm sm:flex sm:flex-wrap sm:items-stretch sm:gap-space-md">
-              {/*
-                Narrower padding while the buttons are full width, the size's
-                own `px-space-xl` back once they size to their labels again.
-
-                Padding is what sets the width of an auto-width button and dead
-                weight on a stretched one, where it only eats into the room the
-                label has. At 320px it left 190px for a label needing 200, so
-                "Konsultasikan Ruangan Anda" wrapped and stood 64px against its
-                46px neighbour.
-              */}
+            <div className="mt-space-md grid grid-cols-2 items-stretch gap-2 sm:flex sm:flex-wrap sm:gap-space-md">
               <WhatsAppCta
                 source="hero"
-                className="px-space-md sm:px-space-xl"
+                className="h-full px-2 py-2.5 text-center text-xs leading-snug sm:h-auto sm:px-space-xl sm:py-space-sm sm:text-label-lg"
               >
-                Konsultasikan Ruangan Anda
+                <span>Konsultasikan Ruangan Anda</span>
               </WhatsAppCta>
               <Button
                 href="/portfolio"
                 variant="outline-inverse"
-                className="px-space-md sm:px-space-xl"
+                className="h-full px-2 py-2.5 text-center text-xs leading-snug sm:h-auto sm:px-space-xl sm:py-space-sm sm:text-label-lg"
               >
-                Lihat Portofolio Proyek
+                <span>Lihat Portofolio Proyek</span>
               </Button>
             </div>
           </Reveal>
